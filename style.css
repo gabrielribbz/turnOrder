@@ -1,0 +1,57 @@
+* {
+    text-align: center;
+    align-items: center;
+}
+
+::placeholder {
+    color: #999; /* Cor do texto de fundo */
+    font-style: italic; /* Estilo do texto de fundo */
+}
+
+#initiativeBox {
+    width: 35px;
+}
+
+#addElement {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px; /* Defina a altura desejada aqui */
+    border: solid 1px blue;
+    width: 100%;
+}
+
+.input {
+    height: 30px;
+}
+
+#button {
+    height: 36px;
+    width: 35px;
+    background: white url(./assets/cross.svg) no-repeat center;
+}
+
+#orderList{
+    list-style-type: none;
+}
+
+.bottom_div {
+    border: solid 1px red;
+    position: fixed;
+    bottom: 0;
+    width: 100%; /* Certifique-se de que a div ocupe a largura total da página */
+    padding: 10px; /* Espaçamento interno da div (pode ser personalizado) */
+    text-align: center; /* Centralize o conteúdo horizontalmente (pode ser personalizado) */
+  }
+  
+  #nextTurn {
+    width: 255px;
+    height: 35px;
+    bottom: 2%;
+    background: lightgreen;
+  }
+ 
+  
+  
+  
