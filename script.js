@@ -4,6 +4,7 @@ var button = document.getElementById("button")
 var myList = document.getElementById("orderList")
 var nextTurn = document.getElementById("nextTurn")
 
+
 function addItem(){
   var text = myTextBox.value
   var iniciative = iniBox.value
