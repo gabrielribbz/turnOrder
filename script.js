@@ -4,7 +4,7 @@ var button = document.getElementById("button")
 var myList = document.getElementById("orderList")
 var nextTurn = document.getElementById("nextTurn")
 
-button.addEventListener("click", function () {
+function addItem(){
   var text = myTextBox.value
   var iniciative = iniBox.value
 
@@ -16,6 +16,7 @@ button.addEventListener("click", function () {
     myList.appendChild(newItem)
     myTextBox.value = ""
     iniBox.value = ""
+    myTextBox.focus();
   }
   var itens = myList.children
   for (var i = 0; i < itens.length; i++) {
@@ -29,7 +30,21 @@ button.addEventListener("click", function () {
       }
     }
   }
+}
+
+button.addEventListener("click", function () {
+  addItem();
 })
+myTextBox.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+      addItem();
+  }
+});
+iniBox.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+      addItem();
+  }
+});
 
 nextTurn.addEventListener("click", function () {
   var lastElement = myList.lastElementChild
