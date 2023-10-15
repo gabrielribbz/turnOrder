@@ -48,27 +48,35 @@ body{
 #orderList {
     list-style-type: none;
     font-size: 20px;
-    width: 50%;
-    margin: 55px auto 0; 
-    padding: 0; 
-}
-
-li {
-    text-align: center;
+    width: 250px;
+    margin: 55px auto 0;
+    padding: 0;
+  }
+  
+  li {
     background: #e9cf8f;
     border-radius: 5px;
     border: solid 1px #6b5e3e;
     font-family: 'Zilla Slab', serif;
-    margin-bottom: 5px; 
-}
-li div {
-    margin-left: 20px;
+    margin-bottom: 5px;
+    padding-left: 10%; /* Use uma porcentagem ou valor relativo que se ajuste melhor à sua necessidade */
+    overflow: hidden; /* Evita problemas de layout */
+  }
+  
+  li input {
+    margin-right: 2%; /* Use uma porcentagem ou valor relativo */
     text-align: right;
-    display: inline-block;
+    float: right;
     color: white;
-    margin-right: 20px;
-    border: 1px solid red;
-}
+    border: none;
+    padding-left: 5%; /* Use uma porcentagem ou valor relativo */
+    height: 20px;
+    width: 20px;
+    padding: 2px;
+    background: #e0c88c;
+    text-align: center;
+  }
+  
 
 .bottom_div {
     background: #e9cf8f;
