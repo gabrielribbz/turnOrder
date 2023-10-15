@@ -59,9 +59,11 @@ myTextBox.addEventListener("keydown", function (event) {
 });
 
 nextTurn.addEventListener("click", function () {
-  var lastElement = myList.lastElementChild
-  myList.insertBefore(lastElement, myList.firstElementChild)
-
+  var save = myList.firstElementChild
+  if(save){
+  myList.removeChild.firstElementChild
+  myList.append(save)
+  }
 })
 
 myList.addEventListener("input", function (event) {
