@@ -1,20 +1,29 @@
-/* Remova o seletor * */
+body{
+    padding: 0;
+    margin: 0;
+    background: #ECD9AA;
+}
 
 ::placeholder {
-    color: #999; /* Cor do texto de fundo */
-    font-style: italic; /* Estilo do texto de fundo */
+    color: #999; 
+    font-style: italic; 
 }
 
 
 
 #addElement {
+    top: 0;
+    background: #e9cf8f;
     padding: 0;
-    margin: auto;
-    display: flex; /* Adicione display: flex; para centralizar conteúdo verticalmente */
+    margin: 0;
+    display: flex; 
     align-items: center;
     justify-content: center;
-    height: 30px; /* Defina a altura desejada aqui */
+    height: 50px; 
     width: 100%;
+    position: fixed;
+    border: 0;
+    box-sizing: border-box;
 }
 
 #initiativeBox {
@@ -25,48 +34,68 @@
 .input {
     display: inline;
     height: 30px;
+    border-radius: 5px;
 }
 
 #button {
     display: inline;
     height: 36px;
     width: 35px;
-    background: white url(./assets/cross.svg) no-repeat center;
+    background: lightgreen url(./assets/cross.svg) no-repeat center;
+    border-radius: 5px;
 }
 
 #orderList {
     list-style-type: none;
-    align-items: center;
-    text-align: center;
-    margin: auto;
     font-size: 20px;
     width: 50%;
-    margin-top: 10px;
+    margin: 55px auto 0; 
+    padding: 0; 
+}
+
+li {
+    text-align: center;
+    background: #e9cf8f;
+    border-radius: 5px;
+    border: solid 1px #6b5e3e;
+    font-family: 'Zilla Slab', serif;
+    margin-bottom: 5px; 
+}
+li div {
+    margin-left: 20px;
+    text-align: right;
+    display: inline-block;
+    color: white;
+    margin-right: 20px;
+    border: 1px solid red;
 }
 
 .bottom_div {
+    background: #e9cf8f;
     position: fixed;
     bottom: 0;
+    height: 10%;
     width: 100%;
     padding: 0;
     text-align: center;
-    display: block; /* Adicione display: flex; para centralizar conteúdo verticalmente */
+    display: flex; 
     align-items: center;
-    margin: 0
+    margin: 0;
+    box-sizing: border-box;
+    border: 0;
+    justify-content: center;
 }
 
 #nextTurn {
-    width: 259px;
+    width: 250px;
     height: 35px;
     background: lightgreen;
     margin: 0;
     padding: 0;
+    border-radius: 5px;
 }
 
-li {
-    border: solid 1px purple;
-    font-family: 'Zilla Slab', serif;
-}
+
 
 #orderList :first-child{
     color: green;
