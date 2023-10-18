@@ -104,6 +104,17 @@ body{
     padding: 0;
     border-radius: 5px;
     background: lightgreen;
+    position: absolute;
+}
+
+#refresh{
+    height: 35px;
+    width: 35px;
+    border-radius: 5px;
+    background: lightgreen url(/assets/refresh.svg) no-repeat;
+    transform: translateX(142px);
+
+    
 }
 
 #bottom_div button:hover {

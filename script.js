@@ -3,6 +3,7 @@ var iniBox = document.getElementById("initiativeBox")
 var button = document.getElementById("button")
 var myList = document.getElementById("orderList")
 var nextTurn = document.getElementById("nextTurn")
+var refresh = document.getElementById("refresh")
 
 
 
@@ -26,13 +27,12 @@ function addItem(){
     iniBox.value = ""
     myTextBox.focus();
   }
-  sortItems()
 }
 function sortItems() {
   var items = myList.children;
   for (var i = 0; i < items.length; i++) {
     for (var j = i + 1; j < items.length; j++) {
-      if (items[i].id < items[j].id) {
+      if (parseInt(items[i].id) < parseInt(items[j].id)) {
         myList.insertBefore(items[j], items[i]);
       }
     }
@@ -64,6 +64,10 @@ nextTurn.addEventListener("click", function () {
   myList.removeChild.firstElementChild
   myList.append(save)
   }
+})
+
+refresh.addEventListener("click", function () {
+  sortItems()
 })
 
 myList.addEventListener("input", function (event) {
