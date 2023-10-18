@@ -116,13 +116,13 @@ body{
     height: 35px;
     width: 35px;
     border-radius: 5px;
-    background: lightgreen url(/assets/refresh.svg) no-repeat;
+    background: lightgreen url(https://raw.githubusercontent.com/gabrielribbz/turnOrder/b5a06c6ac285d91778a2127f8a4de242b708712e/assets/refresh.svg) no-repeat;
     transform: translateX(147px);
 }
 #delete{
     height: 35px;
     width: 35px;
-    background: lightcoral url(/assets/delete.jpeg) no-repeat;
+    background: lightcoral url(https://github.com/gabrielribbz/turnOrder/blob/main/assets/delete.jpeg?raw=true) no-repeat;
     background-size: 20px; /* Ajusta o tamanho da imagem para cobrir o botão */
     background-position: center;
     border-radius: 5px;
