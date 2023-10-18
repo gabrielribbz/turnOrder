@@ -42,6 +42,7 @@ body{
     height: 36px;
     width: 35px;
     background: lightgreen url(./assets/cross.svg) no-repeat center;
+    background-position: center;
     border-radius: 5px;
 }
 #addElement button:hover{
@@ -62,23 +63,27 @@ body{
     border: solid 1px #6b5e3e;
     font-family: 'Zilla Slab', serif;
     margin-bottom: 5px;
-    padding-left: 10%; /* Use uma porcentagem ou valor relativo que se ajuste melhor à sua necessidade */
-    overflow: hidden; /* Evita problemas de layout */
+    padding-left: 10%;
+    overflow: hidden; 
   }
   
   li input {
-    margin-right: 2%; /* Use uma porcentagem ou valor relativo */
+    margin-right: 2%; 
     text-align: right;
     float: right;
     border: none;
-    padding-left: 5%; /* Use uma porcentagem ou valor relativo */
+    border-radius: 5px;
+    padding-left: 5%; 
     height: 20px;
     width: 20px;
     padding: 2px;
     background: #e0c88c;
     text-align: center;
   }
-  
+
+  #orderList  li.dm{
+    background-color: rgb(194, 31, 31);
+  }
 
 #bottom_div {
     background: #e9cf8f;
@@ -98,7 +103,7 @@ body{
 
 
 #nextTurn {
-    width: 250px;
+    width: 220px;
     height: 35px;
     margin: 0;
     padding: 0;
@@ -112,9 +117,24 @@ body{
     width: 35px;
     border-radius: 5px;
     background: lightgreen url(/assets/refresh.svg) no-repeat;
-    transform: translateX(142px);
+    transform: translateX(147px);
+}
+#delete{
+    height: 35px;
+    width: 35px;
+    background: lightcoral url(/assets/delete.jpeg) no-repeat;
+    background-size: 20px; /* Ajusta o tamanho da imagem para cobrir o botão */
+    background-position: center;
+    border-radius: 5px;
+    transform: translateX(-147px);
+}
 
-    
+
+#bottom_div #delete:hover{
+    background-color: rgb(187, 92, 92);
+}
+#bottom_div button#delete.dm{
+    background-color: rgb(194, 31, 31);
 }
 
 #bottom_div button:hover {

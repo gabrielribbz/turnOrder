@@ -4,7 +4,7 @@ var button = document.getElementById("button")
 var myList = document.getElementById("orderList")
 var nextTurn = document.getElementById("nextTurn")
 var refresh = document.getElementById("refresh")
-
+var Delete = document.getElementById("delete")
 
 
 function addItem(){
@@ -17,7 +17,6 @@ function addItem(){
 
     newItem.textContent = text
     newItem.id = iniciative
-    newItem.title = iniciative
 
     iniValue.value = iniciative
     
@@ -38,6 +37,9 @@ function sortItems() {
     }
   }
 }
+
+
+
 button.addEventListener("click", function () {
   addItem();
 })
@@ -68,6 +70,32 @@ nextTurn.addEventListener("click", function () {
 
 refresh.addEventListener("click", function () {
   sortItems()
+})
+
+Delete.addEventListener("click", function (){
+  if(Delete.classList == "dm"){
+    Delete.classList = ""
+  }
+  else{
+  Delete.classList = "dm"
+  }
+})
+
+myList.addEventListener("click", function() {
+  var target = event.target
+  if(Delete.classList == "dm"){
+    myList.removeChild(target)
+  }
+})
+myList.addEventListener("mouseover", function() {
+  var target = event.target
+  if(Delete.classList == "dm"){
+    target.classList = "dm"
+  }
+  myList.addEventListener("mouseout", function() {
+    target.classList = ""
+  })
+  
 })
 
 myList.addEventListener("input", function (event) {
