@@ -108,7 +108,7 @@ body{
     margin: 0;
     padding: 0;
     border-radius: 5px;
-    background: lightgreen url(/assets/arrow.svg) no-repeat center;
+    background: lightgreen url(https://raw.githubusercontent.com/gabrielribbz/turnOrder/05c7b4b0d0cd365544b5e7aed0fad93475448761/assets/arrow.svg) no-repeat center;
 }
 #previousTurn {
     width: 90px;
@@ -116,7 +116,7 @@ body{
     margin: 0;
     padding: 0;
     border-radius: 5px;
-    background: lightgreen url(/assets/arrow.svg) no-repeat center;
+    background: lightgreen url(https://raw.githubusercontent.com/gabrielribbz/turnOrder/05c7b4b0d0cd365544b5e7aed0fad93475448761/assets/arrow.svg) no-repeat center;
     transform: scaleX(-1);
 }
 
