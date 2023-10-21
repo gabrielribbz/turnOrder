@@ -1,7 +1,7 @@
 body{
     padding: 0;
     margin: 0;
-    background: #ECD9AA;
+    background: #ECD9AA ;
 }
 
 ::placeholder {
@@ -103,13 +103,21 @@ body{
 
 
 #nextTurn {
-    width: 220px;
+    width: 90px;
     height: 35px;
     margin: 0;
     padding: 0;
     border-radius: 5px;
-    background: lightgreen;
-    position: absolute;
+    background: lightgreen url(/assets/arrow.svg) no-repeat center;
+}
+#previousTurn {
+    width: 90px;
+    height: 35px;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+    background: lightgreen url(/assets/arrow.svg) no-repeat center;
+    transform: scaleX(-1);
 }
 
 #refresh{
@@ -117,7 +125,7 @@ body{
     width: 35px;
     border-radius: 5px;
     background: lightgreen url(https://raw.githubusercontent.com/gabrielribbz/turnOrder/b5a06c6ac285d91778a2127f8a4de242b708712e/assets/refresh.svg) no-repeat;
-    transform: translateX(147px);
+    
 }
 #delete{
     height: 35px;
@@ -126,7 +134,7 @@ body{
     background-size: 20px; /* Ajusta o tamanho da imagem para cobrir o botão */
     background-position: center;
     border-radius: 5px;
-    transform: translateX(-147px);
+    
 }
 
 

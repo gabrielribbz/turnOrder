@@ -3,6 +3,7 @@ var iniBox = document.getElementById("initiativeBox")
 var button = document.getElementById("button")
 var myList = document.getElementById("orderList")
 var nextTurn = document.getElementById("nextTurn")
+var previousTurn = document.getElementById("previousTurn")
 var refresh = document.getElementById("refresh")
 var Delete = document.getElementById("delete")
 
@@ -66,6 +67,9 @@ nextTurn.addEventListener("click", function () {
   myList.removeChild.firstElementChild
   myList.append(save)
   }
+})
+previousTurn.addEventListener("click", function () {
+  myList.insertBefore(myList.lastElementChild, myList.firstElementChild)
 })
 
 refresh.addEventListener("click", function () {
