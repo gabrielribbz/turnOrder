@@ -83,6 +83,7 @@ body{
 
   #orderList  li.dm{
     background-color: rgb(194, 31, 31);
+    border-color: rgb(87, 2, 2);
   }
 
 #bottom_div {
@@ -108,7 +109,7 @@ body{
     margin: 0;
     padding: 0;
     border-radius: 5px;
-    background: lightgreen url(https://raw.githubusercontent.com/gabrielribbz/turnOrder/05c7b4b0d0cd365544b5e7aed0fad93475448761/assets/arrow.svg) no-repeat center;
+    background: lightgreen url(https://raw.githubusercontent.com/gabrielribbz/turnOrder/05c7b4b0d0cd365544b5e7aed0fad93475448761/assets/arrowright.svg) no-repeat center;
 }
 #previousTurn {
     width: 90px;
@@ -116,8 +117,7 @@ body{
     margin: 0;
     padding: 0;
     border-radius: 5px;
-    background: lightgreen url(https://raw.githubusercontent.com/gabrielribbz/turnOrder/05c7b4b0d0cd365544b5e7aed0fad93475448761/assets/arrow.svg) no-repeat center;
-    transform: scaleX(-1);
+    background: lightgreen url(/turnOrder/assets/arrowleft.svg) no-repeat center;
 }
 
 #refresh{
@@ -154,3 +154,16 @@ body{
     font-weight: bold;
     color: green;
 }
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-2px); }
+    40% { transform: translateX(2px); }
+    60% { transform: translateX(-2px); }
+    80% { transform: translateX(2px); }
+    100% { transform: translateX(0); }
+  }
+  
+  .shakeElement {
+    animation: shake 0.5s;
+  }

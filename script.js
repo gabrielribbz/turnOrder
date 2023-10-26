@@ -12,7 +12,7 @@ function addItem(){
   var text = myTextBox.value
   var iniciative = iniBox.value
 
-  if ((text && iniciative) !== "") {
+  if (((text && iniciative) !== "") && (Delete.className == "")) {
     var newItem = document.createElement("li")
     var iniValue = document.createElement("input")
 
@@ -26,6 +26,13 @@ function addItem(){
     myTextBox.value = ""
     iniBox.value = ""
     myTextBox.focus();
+  }
+  else{
+    button.classList = "shakeElement"
+  
+    button.addEventListener("animationend", () => {
+      button.classList = ""
+    });
   }
 }
 function sortItems() {
@@ -61,21 +68,46 @@ myTextBox.addEventListener("keydown", function (event) {
   }
 });
 
+//NEXT TURN
 nextTurn.addEventListener("click", function () {
   var save = myList.firstElementChild
-  if(save){
+  if(save && (Delete.className !== "dm") && myList.getElementsByTagName("li").length > 1){
   myList.removeChild.firstElementChild
   myList.append(save)
   }
+  else{
+    nextTurn.classList = "shakeElement"
+    nextTurn.addEventListener("animationend", () => {
+      nextTurn.classList = ""
+    });
+  }
 })
+//PREVIOUS TURN
 previousTurn.addEventListener("click", function () {
+  if(Delete.className == "dm" || myList.getElementsByTagName("li").length <= 1){
+    previousTurn.classList = "shakeElement"
+    previousTurn.addEventListener("animationend", () => {
+      previousTurn.classList = ""
+    });
+  }
+  else{
   myList.insertBefore(myList.lastElementChild, myList.firstElementChild)
+  }
 })
-
+//AUTOMATIC ORDER
 refresh.addEventListener("click", function () {
+  if(Delete.className == "dm" || myList.getElementsByTagName("li").length <= 1){
+    refresh.classList = "shakeElement"
+    refresh.addEventListener("animationend", () => {
+      refresh.classList = ""
+    });
+  }
+  else{
   sortItems()
+  }
 })
 
+//DELETE
 Delete.addEventListener("click", function (){
   if(Delete.classList == "dm"){
     Delete.classList = ""
@@ -84,7 +116,6 @@ Delete.addEventListener("click", function (){
   Delete.classList = "dm"
   }
 })
-
 myList.addEventListener("click", function() {
   var target = event.target
   if(Delete.classList == "dm"){
@@ -102,6 +133,7 @@ myList.addEventListener("mouseover", function() {
   
 })
 
+//CHANGE INPUT VALUE
 myList.addEventListener("input", function (event) {
   var target = event.target;
   if (target.tagName === "INPUT") {
