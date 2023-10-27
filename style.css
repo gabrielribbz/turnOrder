@@ -44,6 +44,7 @@ body{
     background: lightgreen url(./assets/cross.svg) no-repeat center;
     background-position: center;
     border-radius: 5px;
+    cursor: pointer;
 }
 #addElement button:hover{
     background-color: rgb(100, 204, 100);
@@ -57,7 +58,7 @@ body{
     padding: 0;
   }
   
-  li {
+  #orderList li {
     background: #e9cf8f;
     border-radius: 5px;
     border: solid 1px #6b5e3e;
@@ -67,7 +68,7 @@ body{
     overflow: hidden; 
   }
   
-  li input {
+  #orderList  li input {
     margin-right: 2%; 
     text-align: right;
     float: right;
@@ -81,10 +82,7 @@ body{
     text-align: center;
   }
 
-  #orderList  li.dm{
-    background-color: rgb(194, 31, 31);
-    border-color: rgb(87, 2, 2);
-  }
+
 
 #bottom_div {
     background: #e9cf8f;
@@ -109,7 +107,8 @@ body{
     margin: 0;
     padding: 0;
     border-radius: 5px;
-    background: lightgreen url(https://raw.githubusercontent.com/gabrielribbz/turnOrder/05c7b4b0d0cd365544b5e7aed0fad93475448761/assets/arrowright.svg) no-repeat center;
+    cursor: pointer;
+    background: lightgreen url(/assets/arrowright.svg) no-repeat center;
 }
 #previousTurn {
     width: 90px;
@@ -117,13 +116,15 @@ body{
     margin: 0;
     padding: 0;
     border-radius: 5px;
-    background: lightgreen url(/turnOrder/assets/arrowleft.svg) no-repeat center;
+    cursor: pointer;
+    background: lightgreen url(https://raw.githubusercontent.com/gabrielribbz/turnOrder/8acb9560c2761abbf5b1bcd1758f9014bba14937/assets/arrowleft.svg) no-repeat center;
 }
 
 #refresh{
     height: 35px;
     width: 35px;
     border-radius: 5px;
+    cursor: pointer;
     background: lightgreen url(https://raw.githubusercontent.com/gabrielribbz/turnOrder/b5a06c6ac285d91778a2127f8a4de242b708712e/assets/refresh.svg) no-repeat;
     
 }
@@ -134,6 +135,7 @@ body{
     background-size: 20px; /* Ajusta o tamanho da imagem para cobrir o botão */
     background-position: center;
     border-radius: 5px;
+    cursor: pointer;
     
 }
 
@@ -155,6 +157,74 @@ body{
     color: green;
 }
 
+.accordion {
+    position: fixed;
+    left: 2px;
+    top: 50px;
+    width: 20%;
+  }
+  
+  .tab-button {
+    margin-top: 2px;
+    display: block;
+    background-color: #e9cf8f;
+    color: black;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+  }
+  
+  .tab-content {
+    display: none; /* Usar display flex para centralizar verticalmente */
+    align-items: center; /* Centralizar verticalmente */
+    align-content: center;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    list-style-type: none;
+    font-size: 20px;
+    text-align: center;
+    font-size: 15px;
+  }
+  .tab-content ul {
+    padding: 0;
+  }
+  
+  #CustomNameEffect {
+    display: none;
+  }
+  .tab input {
+    display: block;
+    font-size: 15px;
+    margin: auto;
+    height: 20px;
+    width: 55%;
+  }
+ 
+  #selectElement{
+    width: 50px;
+    height: 20px;
+    background-color: lightgreen;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  #selectElement:hover{
+    background-color: rgb(100, 204, 100);
+  }
+
+  #selectElement.slct {
+    background-color: aqua;
+  }
+
+  li span{
+    display: block;
+    font-size: 10px;
+    margin: 5px;
+  }
 @keyframes shake {
     0% { transform: translateX(0); }
     20% { transform: translateX(-2px); }
@@ -166,4 +236,24 @@ body{
   
   .shakeElement {
     animation: shake 0.5s;
+  }
+
+  @keyframes ping {
+    0% { transform: scale(1); }
+    20% { transform: scale(0.9); }
+    40% { transform: scale(0.85); }
+    60% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+  }
+
+  ul#orderList li.deleteAnim {
+    background-color: rgb(194, 31, 31);
+    border-color: rgb(87, 2, 2);
+    animation: ping 0.5s;
+  }
+
+  ul#orderList li.slctAnim {
+    background-color: rgb(105, 168, 168);
+    border-color: rgb(83, 136, 136);
+    animation: ping 0.5s;
   }
