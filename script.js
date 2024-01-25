@@ -220,8 +220,10 @@ document.addEventListener("DOMContentLoaded", function () {
       const content = this.nextElementSibling;
       if (content.style.display === "block") {
         content.style.display = "none";
+        document.querySelector(".tab-button").id = ""
       } else {
         content.style.display = "block";
+        document.querySelector(".tab-button").id = "tabopen"
       }
     });
   });
