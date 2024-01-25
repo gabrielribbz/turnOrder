@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 100 100">
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 100 100" transform="scale(1,1)">
   <!-- Cabeça da seta -->
   <polygon points="80,50 50,70 50,50 50,30" fill="black" />
 
