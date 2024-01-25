@@ -111,8 +111,12 @@ body{
     padding: 0;
     border-radius: 5px;
     cursor: pointer;
-    background: lightgreen url(https://github.com/gabrielribbz/turnOrder/blob/main/assets/arrowright.svg) no-repeat center;
+    background: lightgreen url(/assets/arrowright.svg) no-repeat center;
 }
+#nextTurn ::after{
+  background-image: url(https://raw.githubusercontent.com/gabrielribbz/turnOrder/9b636e7a2bbd7287feb559cb6b9435ab1a716601/assets/arrowright.svg);
+}
+
 #previousTurn {
     width: 90px;
     height: 35px;
@@ -120,7 +124,10 @@ body{
     padding: 0;
     border-radius: 5px;
     cursor: pointer;
-    background: lightgreen url(https://github.com/gabrielribbz/turnOrder/blob/main/assets/arrowleft.svg) no-repeat center;
+    background: lightgreen url(/assets/arrowleft.svg) no-repeat center;
+}
+#previousTurn ::after{
+  background-image: url(https://raw.githubusercontent.com/gabrielribbz/turnOrder/9b636e7a2bbd7287feb559cb6b9435ab1a716601/assets/arrowleft.svg);
 }
 
 #refresh{
@@ -131,6 +138,10 @@ body{
     background: lightgreen url(/assets/refresh.svg) no-repeat;
     
 }
+#refresh ::after{
+  background-image: url(https://raw.githubusercontent.com/gabrielribbz/turnOrder/9b636e7a2bbd7287feb559cb6b9435ab1a716601/assets/refresh.svg);
+}
+
 #delete{
     height: 35px;
     width: 35px;
@@ -140,6 +151,9 @@ body{
     border-radius: 5px;
     cursor: pointer;
     
+}
+#delete ::after{
+  background-image: url(https://github.com/gabrielribbz/turnOrder/blob/main/assets/delete.jpeg?raw=true);
 }
 
 
