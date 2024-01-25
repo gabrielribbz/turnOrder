@@ -11,7 +11,6 @@ var turnNumber = document.getElementById("turnNumber")
 var diceNumber = document.getElementById("diceNumber")
 var opcoes = document.getElementById("opcoes")
 
-var whichTurnIs = 0;
 
 var block = 0;
 
@@ -61,8 +60,12 @@ function createEffect() {
 
   if (tN !== "" && dN !== "") {
     var newSpan = document.createElement("span");
-    newSpan.textContent = selectedOption + "RT: " + tN + ", DICE: " + dN;
+    var newInput = document.createElement("input")
+    newSpan.id = tN
+    newInput.value = newSpan.id
+    newSpan.textContent = selectedOption + " DICE:" + dN + " TN:";
     target.appendChild(newSpan);
+    newSpan.appendChild(newInput)
 
     turnNumber.value = "";
     diceNumber.value = "";
@@ -106,10 +109,23 @@ selectElement.addEventListener("click", function (){
 //NEXT TURN
 nextTurn.addEventListener("click", function () {
   var save = myList.firstElementChild
+
   if(save && (block == 0) && myList.getElementsByTagName("li").length > 1){
   myList.removeChild.firstElementChild
   myList.append(save)
+  
+  var span = myList.firstElementChild.querySelector("span");
+  var tN = span.querySelector("input")
+  if (tN) {
+      tN.value--
+      if(tN.value <= 0){
+        myList.firstElementChild.removeChild(span)
+      }
+      alert("Effect")
   }
+
+  }
+  
   else{
     nextTurn.classList = "shakeElement"
     nextTurn.addEventListener("animationend", () => {
@@ -117,6 +133,8 @@ nextTurn.addEventListener("click", function () {
     });
   }
 })
+
+
 //PREVIOUS TURN
 previousTurn.addEventListener("click", function () {
   if(block == 1 || myList.getElementsByTagName("li").length <= 1){
@@ -166,8 +184,8 @@ myList.addEventListener("click", function() {
     block = 0
 }
 })
-myList.addEventListener("mouseover", function() {
-  var target = event.target
+myList.addEventListener("mouseover", function(event) {
+  var target = event.target;
   if(Delete.classList == "dm"){
     target.classList = "deleteAnim"
   }

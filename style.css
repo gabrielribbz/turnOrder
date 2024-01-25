@@ -82,7 +82,10 @@ body{
     text-align: center;
   }
 
-
+  #orderList li:first-child{
+    font-weight: bold;
+    color: green;
+}
 
 #bottom_div {
     background: #e9cf8f;
@@ -117,7 +120,7 @@ body{
     padding: 0;
     border-radius: 5px;
     cursor: pointer;
-    background: lightgreen url(https://raw.githubusercontent.com/gabrielribbz/turnOrder/8acb9560c2761abbf5b1bcd1758f9014bba14937/assets/arrowleft.svg) no-repeat center;
+    background: lightgreen url(/assets/arrowleft.svg) no-repeat center;
 }
 
 #refresh{
@@ -125,13 +128,13 @@ body{
     width: 35px;
     border-radius: 5px;
     cursor: pointer;
-    background: lightgreen url(https://raw.githubusercontent.com/gabrielribbz/turnOrder/b5a06c6ac285d91778a2127f8a4de242b708712e/assets/refresh.svg) no-repeat;
+    background: lightgreen url(/assets/refresh.svg) no-repeat;
     
 }
 #delete{
     height: 35px;
     width: 35px;
-    background: lightcoral url(https://github.com/gabrielribbz/turnOrder/blob/main/assets/delete.jpeg?raw=true) no-repeat;
+    background: lightcoral url(/assets/delete.jpeg) no-repeat;
     background-size: 20px; /* Ajusta o tamanho da imagem para cobrir o botão */
     background-position: center;
     border-radius: 5px;
@@ -152,10 +155,7 @@ body{
 }
 
 
-#orderList li:first-child{
-    font-weight: bold;
-    color: green;
-}
+
 
 .accordion {
     position: fixed;
@@ -171,8 +171,8 @@ body{
     color: black;
     border-radius: 5px;
     padding: 10px;
-    width: 100%;
-    text-align: left;
+    width: 15px;
+    text-align: center;
     cursor: pointer;
   }
   
@@ -221,10 +221,14 @@ body{
   }
 
   li span{
-    display: block;
-    font-size: 10px;
+    display: flex;
+    font-size: 80%;
     margin: 5px;
   }
+  #orderList li span input{
+      background-color: transparent;
+  }
+
 @keyframes shake {
     0% { transform: translateX(0); }
     20% { transform: translateX(-2px); }
