@@ -111,10 +111,7 @@ body{
     padding: 0;
     border-radius: 5px;
     cursor: pointer;
-    background: lightgreen url(/assets/arrowright.svg) no-repeat center;
-}
-#nextTurn ::after{
-  background-image: url(https://raw.githubusercontent.com/gabrielribbz/turnOrder/9b636e7a2bbd7287feb559cb6b9435ab1a716601/assets/arrowright.svg);
+    background: lightgreen url(https://raw.githubusercontent.com/gabrielribbz/turnOrder/9b636e7a2bbd7287feb559cb6b9435ab1a716601/assets/arrowright.svg) no-repeat center;
 }
 
 #previousTurn {
@@ -124,36 +121,29 @@ body{
     padding: 0;
     border-radius: 5px;
     cursor: pointer;
-    background: lightgreen url(/assets/arrowleft.svg) no-repeat center;
+    background: lightgreen url(https://raw.githubusercontent.com/gabrielribbz/turnOrder/9b636e7a2bbd7287feb559cb6b9435ab1a716601/assets/arrowleft.svg) no-repeat center;
 }
-#previousTurn ::after{
-  background-image: url(https://raw.githubusercontent.com/gabrielribbz/turnOrder/9b636e7a2bbd7287feb559cb6b9435ab1a716601/assets/arrowleft.svg);
-}
+
 
 #refresh{
     height: 35px;
     width: 35px;
     border-radius: 5px;
     cursor: pointer;
-    background: lightgreen url(/assets/refresh.svg) no-repeat;
+    background: lightgreen url(https://raw.githubusercontent.com/gabrielribbz/turnOrder/9b636e7a2bbd7287feb559cb6b9435ab1a716601/assets/refresh.svg) no-repeat;
     
 }
-#refresh ::after{
-  background-image: url(https://raw.githubusercontent.com/gabrielribbz/turnOrder/9b636e7a2bbd7287feb559cb6b9435ab1a716601/assets/refresh.svg);
-}
+
 
 #delete{
     height: 35px;
     width: 35px;
-    background: lightcoral url(/assets/delete.jpeg) no-repeat;
+    background: lightcoral url(https://github.com/gabrielribbz/turnOrder/blob/main/assets/delete.jpeg?raw=true) no-repeat;
     background-size: 20px; /* Ajusta o tamanho da imagem para cobrir o botão */
     background-position: center;
     border-radius: 5px;
     cursor: pointer;
     
-}
-#delete ::after{
-  background-image: url(https://github.com/gabrielribbz/turnOrder/blob/main/assets/delete.jpeg?raw=true);
 }
 
 
@@ -181,13 +171,15 @@ body{
   .tab-button {
     margin-top: 2px;
     display: block;
-    background-color: #e9cf8f;
     color: black;
     border-radius: 5px;
     padding: 10px;
-    width: 15%;
+    width: 15px;
+    height: 15px;
     text-align: center;
     cursor: pointer;
+    background: #e9cf8f url(/assets/effect.png) no-repeat center;
+    background-size: contain; 
   }
   #tabopen{
     width: 80%;
@@ -204,6 +196,7 @@ body{
     font-size: 20px;
     text-align: center;
     font-size: 15px;
+    width: 80%;
   }
   .tab-content ul {
     padding: 0;
@@ -217,11 +210,12 @@ body{
     font-size: 15px;
     margin: auto;
     height: 20px;
-    width: 55%;
+    width: 80%;
+    
   }
  
   #selectElement{
-    width: 50px;
+    width: 100%;
     height: 20px;
     background-color: lightgreen;
     margin: 0;
