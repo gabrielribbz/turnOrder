@@ -178,7 +178,7 @@ body{
     height: 15px;
     text-align: center;
     cursor: pointer;
-    background: #e9cf8f url(/assets/effect.png) no-repeat center;
+    background: #e9cf8f url(https://github.com/gabrielribbz/turnOrder/blob/main/assets/effect.png?raw=true) no-repeat center;
     background-size: contain; 
   }
   #tabopen{
