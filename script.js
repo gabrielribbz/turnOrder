@@ -12,6 +12,11 @@ var diceNumber = document.getElementById("diceNumber")
 var opcoes = document.getElementById("opcoes")
 var pressTimer;
 
+document.getElementById("delete").addEventListener("touchstart", iniciarContagem);
+document.getElementById("delete").addEventListener("touchend", pararContagem);
+document.getElementById("delete").addEventListener("mousedown", iniciarContagem);
+document.getElementById("delete").addEventListener("mouseup", pararContagem);
+
 var block = 0;
 
 function addItem(){
