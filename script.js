@@ -10,7 +10,7 @@ var selectElement = document.getElementById("selectElement")
 var turnNumber = document.getElementById("turnNumber")
 var diceNumber = document.getElementById("diceNumber")
 var opcoes = document.getElementById("opcoes")
-
+var pressTimer;
 
 var block = 0;
 
@@ -71,6 +71,8 @@ function createEffect() {
     diceNumber.value = "";
   }
 }
+
+
 
 
 button.addEventListener("click", function () {
@@ -165,12 +167,36 @@ Delete.addEventListener("click", function (){
   if(Delete.classList == "dm"){
     Delete.classList = ""
     block = 0
+    
   }
   else{
   Delete.classList = "dm"
   block = 1
   }
 })
+
+//DELETE ALL
+function iniciarContagem() {
+  pressTimer = window.setTimeout(function() {
+    exibirCaixaMensagem()
+  }, 3000);
+}
+function pararContagem() {
+  window.clearTimeout(pressTimer);
+  
+}
+function exibirCaixaMensagem() {
+      var resposta = window.confirm("Are you sure?");
+
+      if (resposta) {
+        while(myList.firstChild){
+          myList.removeChild(myList.firstChild)
+      
+          }
+      } else {
+      }
+    }
+
 
 myList.addEventListener("click", function() {
   var target = event.target
