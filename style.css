@@ -9,6 +9,12 @@ body{
     font-style: italic; 
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 
 
 #addElement {
@@ -81,6 +87,16 @@ body{
     background: #e0c88c;
     text-align: center;
   }
+  #orderList  li  .healthpoints{
+    background: green;
+    border-radius: 0px 3px 3px 0;
+    margin-right: 0;
+    color: white;
+   }
+   #orderList  li ::placeholder{
+    color: white;
+    font-style: normal;
+   }
 
   #orderList li:first-child{
     font-weight: bold;
@@ -180,14 +196,15 @@ body{
     cursor: pointer;
     background: #e9cf8f url(https://raw.githubusercontent.com/gabrielribbz/turnOrder/main/assets/effect.png) no-repeat center;
     background-size: contain; 
+    transition: width 0.3s ease;
   }
   #tabopen{
     width: 80%;
   }
   
   .tab-content {
-    display: none; /* Usar display flex para centralizar verticalmente */
-    align-items: center; /* Centralizar verticalmente */
+    overflow: hidden;
+    align-items: center; 
     align-content: center;
     padding: 10px;
     background-color: #f2f2f2;
@@ -197,11 +214,19 @@ body{
     text-align: center;
     font-size: 15px;
     width: 80%;
+
+    height: 0;
+    opacity: 0;
+    transition: height 0.5s ease, opacity 0.5s ease;
   }
   .tab-content ul {
     padding: 0;
   }
-  
+  #active{
+    height: 100px; 
+    opacity: 1;
+  }
+
   #CustomNameEffect {
     display: none;
   }
@@ -230,6 +255,8 @@ body{
   #selectElement.slct {
     background-color: aqua;
   }
+
+
 
   li span{
     display: flex;

@@ -12,6 +12,7 @@ var diceNumber = document.getElementById("diceNumber")
 var opcoes = document.getElementById("opcoes")
 var pressTimer;
 
+
 document.getElementById("delete").addEventListener("touchstart", iniciarContagem);
 document.getElementById("delete").addEventListener("touchend", pararContagem);
 document.getElementById("delete").addEventListener("mousedown", iniciarContagem);
@@ -26,6 +27,13 @@ function addItem(){
   if (((text && iniciative) !== "") && (block == 0)) {
     var newItem = document.createElement("li")
     var iniValue = document.createElement("input")
+    var hpValue = document.createElement("input")
+
+    iniValue.type = "number"
+    hpValue.type = "number"
+    hpValue.classList = "healthpoints"
+    iniValue.classList = "iniciativePoints"
+    hpValue.placeholder = "HP"
 
     newItem.textContent = text
     newItem.id = iniciative
@@ -33,10 +41,13 @@ function addItem(){
     iniValue.value = iniciative
     
     myList.appendChild(newItem)
+    newItem.appendChild(hpValue)
     newItem.appendChild(iniValue)
+    
     myTextBox.value = ""
     iniBox.value = ""
     myTextBox.focus();
+
   }
   else{
     button.classList = "shakeElement"
@@ -196,7 +207,7 @@ function exibirCaixaMensagem() {
       if (resposta) {
         while(myList.firstChild){
           myList.removeChild(myList.firstChild)
-      
+          localStorage.clear();
           }
       } else {
       }
@@ -215,29 +226,29 @@ myList.addEventListener("click", function() {
     block = 0
 }
 })
+
 myList.addEventListener("mouseover", function(event) {
   var target = event.target;
   if(Delete.classList == "dm"){
-    target.classList = "deleteAnim"
+    target.classList.add("deleteAnim")
   }
   if(selectElement.className == "slct"){
-    target.classList = "slctAnim"
+    target.classList.add("slctAnim")
   }
-  myList.addEventListener("mouseout", function() {
-    target.classList = ""
-    target.classList = ""
-  })
   
+myList.addEventListener("mouseout",function(event){
+  event.target.classList.remove("deleteAnim","slctAnim")
+})
 })
 
-//CHANGE INPUT VALUE
+//CHANGE INI VALUE
 myList.addEventListener("input", function (event) {
   var target = event.target;
-  if (target.tagName === "INPUT" && block == 0) {
-    var listItem = target.closest("li");
+  var listItem = target.closest("li");
+  if ((target.classList == "iniciativePoints") && block == 0) {
+    
     if (listItem) {
       listItem.id = target.value;
-      listItem.title = target.value;
     }
   }
 });
@@ -249,12 +260,17 @@ document.addEventListener("DOMContentLoaded", function () {
   tabButtons.forEach(function (span) {
     span.addEventListener("click", function () {
       const content = this.nextElementSibling;
-      if (content.style.display === "block") {
-        content.style.display = "none";
-        document.querySelector(".tab-button").id = ""
-      } else {
-        content.style.display = "block";
+      if (content.id === "active" && document.querySelector(".tab-button").id === "tabopen") {
+        content.id = ""
+        setTimeout(function() {
+          document.querySelector(".tab-button").id = ""
+        }, 200);
+        
+      } if (content.id != "active" && document.querySelector(".tab-button").id != "tabopen") {
         document.querySelector(".tab-button").id = "tabopen"
+        setTimeout(function() {
+          content.id = "active"
+        }, 100);
       }
     });
   });
