@@ -14,6 +14,9 @@ window.onload = function() {
             addSavedItem(data.itens[i], data.iniValues[i], data.hpValues[i]);
         }
     }
+    populateDatalist()
+    
+
 };
 
 function addSavedItem(item, iniValue, hpValue) {
@@ -54,3 +57,4 @@ function salvarListaNoLocalStorage() {
 
     localStorage.setItem('minhaLista', JSON.stringify({ itens, iniValues, hpValues }));
 }
+

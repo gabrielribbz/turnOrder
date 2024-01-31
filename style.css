@@ -1,12 +1,14 @@
+*{
+  font-family: 'Lato', sans-serif;
+}
 body{
     padding: 0;
     margin: 0;
-    background: #ECD9AA ;
+    background-color: var(--white);
 }
 
 ::placeholder {
     color: #999; 
-    font-style: italic; 
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -15,22 +17,34 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 
+input::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+
+:root{
+  --white: #d8d8d8fd;
+  --black:#868686;
+}
 
 
 #addElement {
-    top: 0;
-    background: #e9cf8f;
-    padding: 0;
-    margin: 0;
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-    height: 50px; 
-    width: 100%;
-    position: fixed;
-    border: 0;
-    box-sizing: border-box;
-}
+  position: relative; 
+  top: 0;
+  background-color: var(--white);
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  height: 50px;
+  width: 100%;
+  border: 0;
+  box-sizing: border-box;
+  box-shadow: 0 0.05rem 0.5rem var(--black);
+  gap: 5px;
+  }
 
 #initiativeBox {
     width: 35px;
@@ -38,40 +52,59 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .input {
-    display: inline;
+    display: block;
     height: 30px;
-    border-radius: 5px;
+    border: none;
+    width: 176px;
+    box-shadow: 0 0.05rem 0.5rem var(--black);
+    
 }
+
+datalist#sugestoes-container {
+  width: 0.5rem;
+}
+
+datalist option {
+  width: 50px;
+}
+
+
+.sugestao:hover {
+  background-color: #f0f0f0;
+}
+
 
 #button {
     display: inline;
-    height: 36px;
-    width: 35px;
+    height: 32px;
+    width: 32px;
     background: lightgreen url(./assets/cross.svg) no-repeat center;
     background-position: center;
-    border-radius: 5px;
-    cursor: pointer;
+    cursor: pointer;  
+    border: none;
+    box-shadow: 0 0.1rem 0.5rem var(--black);
 }
 #addElement button:hover{
     background-color: rgb(100, 204, 100);
 }
 
+
+
 #orderList {
     list-style-type: none;
     font-size: 20px;
     width: 250px;
-    margin: 55px auto 0;
+    margin: 15px auto 0;
     padding: 0;
+    padding-bottom: 25%;
   }
   
   #orderList li {
-    background: #e9cf8f;
-    border-radius: 5px;
-    border: solid 1px #6b5e3e;
-    font-family: 'Zilla Slab', serif;
+    background: var(--white);
     margin-bottom: 5px;
     padding-left: 10%;
     overflow: hidden; 
+    box-shadow: 0 0.05rem 0.5rem var(--black);
   }
   
   #orderList  li input {
@@ -79,12 +112,11 @@ input[type="number"]::-webkit-outer-spin-button {
     text-align: right;
     float: right;
     border: none;
-    border-radius: 5px;
     padding-left: 5%; 
     height: 20px;
     width: 20px;
     padding: 2px;
-    background: #e0c88c;
+    background: var(--white);
     text-align: center;
   }
   #orderList  li  .healthpoints{
@@ -95,7 +127,6 @@ input[type="number"]::-webkit-outer-spin-button {
    }
    #orderList  li ::placeholder{
     color: white;
-    font-style: normal;
    }
 
   #orderList li:first-child{
@@ -104,12 +135,12 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 #bottom_div {
-    background: #e9cf8f;
+    background: var(--white);
     position: fixed;
     bottom: 0;
     height: 10%;
     width: 100%;
-    padding: 0;
+    gap: 5px;
     text-align: center;
     display: flex; 
     align-items: center;
@@ -117,6 +148,7 @@ input[type="number"]::-webkit-outer-spin-button {
     box-sizing: border-box;
     border: 0;
     justify-content: center;
+    box-shadow: 0 0.1rem 0.5rem var(--black);
 }
 
 
@@ -125,9 +157,10 @@ input[type="number"]::-webkit-outer-spin-button {
     height: 35px;
     margin: 0;
     padding: 0;
-    border-radius: 5px;
     cursor: pointer;
-    background: lightgreen url(https://raw.githubusercontent.com/gabrielribbz/turnOrder/9b636e7a2bbd7287feb559cb6b9435ab1a716601/assets/arrowright.svg) no-repeat center;
+    background: lightgreen url(https://raw.githubusercontent.com/gabrielribbz/turnOrder/0c417cc654897da93f217f9195b62f3b740cb905/assets/arrowright.svg) no-repeat center;
+    box-shadow: 0 0.1rem 0.5rem var(--black);
+    border: none;
 }
 
 #previousTurn {
@@ -135,19 +168,20 @@ input[type="number"]::-webkit-outer-spin-button {
     height: 35px;
     margin: 0;
     padding: 0;
-    border-radius: 5px;
     cursor: pointer;
-    background: lightgreen url(https://raw.githubusercontent.com/gabrielribbz/turnOrder/9b636e7a2bbd7287feb559cb6b9435ab1a716601/assets/arrowleft.svg) no-repeat center;
+    background: lightgreen url(https://raw.githubusercontent.com/gabrielribbz/turnOrder/0c417cc654897da93f217f9195b62f3b740cb905/assets/arrowleft.svg) no-repeat center;
+    box-shadow: 0 0.1rem 0.5rem var(--black);
+    border: none;
 }
 
 
 #refresh{
     height: 35px;
     width: 35px;
-    border-radius: 5px;
     cursor: pointer;
-    background: lightgreen url(https://raw.githubusercontent.com/gabrielribbz/turnOrder/9b636e7a2bbd7287feb559cb6b9435ab1a716601/assets/refresh.svg) no-repeat;
-    
+    background: lightgreen url(https://raw.githubusercontent.com/gabrielribbz/turnOrder/0c417cc654897da93f217f9195b62f3b740cb905/assets/refresh.svg) no-repeat center;
+    border: none;
+    box-shadow: 0 0.1rem 0.5rem var(--black);
 }
 
 
@@ -157,9 +191,9 @@ input[type="number"]::-webkit-outer-spin-button {
     background: lightcoral url(https://github.com/gabrielribbz/turnOrder/blob/main/assets/delete.jpeg?raw=true) no-repeat;
     background-size: 20px; /* Ajusta o tamanho da imagem para cobrir o botão */
     background-position: center;
-    border-radius: 5px;
+    border: none;
     cursor: pointer;
-    
+    box-shadow: 0 0.1rem 0.5rem var(--black);
 }
 
 
@@ -194,25 +228,42 @@ input[type="number"]::-webkit-outer-spin-button {
     height: 15px;
     text-align: center;
     cursor: pointer;
-    background: #e9cf8f url(https://raw.githubusercontent.com/gabrielribbz/turnOrder/main/assets/effect.png) no-repeat center;
+    background: var(--white) url(https://raw.githubusercontent.com/gabrielribbz/turnOrder/main/assets/effect.png) no-repeat center;
     background-size: contain; 
     transition: width 0.3s ease;
+    box-shadow: 0 0.1rem 0.5rem var(--black);
   }
   #tabopen{
     width: 80%;
+    border-radius: 5px 5px 0 0;
   }
-  
+
+  #opcoes{
+    justify-content: center;
+    appearance: none;
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    width: 80%;
+    height: 20px;
+    border-color: #fff transparent transparent transparent;
+    
+  }
+
+  #opcoes option{
+    text-align: center;
+  }
+
+
   .tab-content {
     overflow: hidden;
     align-items: center; 
     align-content: center;
     padding: 10px;
     background-color: #f2f2f2;
-    border-radius: 5px;
+    border-radius: 0 0 5px 5px;
     list-style-type: none;
     font-size: 20px;
     text-align: center;
-    font-size: 15px;
     width: 80%;
 
     height: 0;
@@ -227,25 +278,23 @@ input[type="number"]::-webkit-outer-spin-button {
     opacity: 1;
   }
 
-  #CustomNameEffect {
-    display: none;
-  }
   .tab input {
     display: block;
     font-size: 15px;
-    margin: auto;
     height: 20px;
     width: 80%;
+    margin: auto;
+    padding: 0;
     
   }
  
   #selectElement{
-    width: 100%;
+    border: none;
+    width: 80%;
     height: 20px;
     background-color: lightgreen;
     margin: 0;
     padding: 0;
-    border-radius: 5px;
     cursor: pointer;
   }
   #selectElement:hover{
@@ -282,9 +331,9 @@ input[type="number"]::-webkit-outer-spin-button {
 
   @keyframes ping {
     0% { transform: scale(1); }
-    20% { transform: scale(0.9); }
-    40% { transform: scale(0.85); }
-    60% { transform: scale(0.9); }
+    20% { transform: scale(0.95); }
+    40% { transform: scale(0.9); }
+    60% { transform: scale(0.95); }
     100% { transform: scale(1); }
   }
 

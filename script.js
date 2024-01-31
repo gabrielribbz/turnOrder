@@ -23,11 +23,13 @@ var block = 0;
 function addItem(){
   var text = myTextBox.value
   var iniciative = iniBox.value
+  var datalist = document.getElementById('sugestoes-container');
 
   if (((text && iniciative) !== "") && (block == 0)) {
     var newItem = document.createElement("li")
     var iniValue = document.createElement("input")
     var hpValue = document.createElement("input")
+    var option = document.createElement('option');
 
     iniValue.type = "number"
     hpValue.type = "number"
@@ -44,10 +46,14 @@ function addItem(){
     newItem.appendChild(hpValue)
     newItem.appendChild(iniValue)
     
+
     myTextBox.value = ""
     iniBox.value = ""
     myTextBox.focus();
 
+    option.value = text
+    datalist.appendChild(option);
+    salvarParaProcura();
   }
   else{
     button.classList = "shakeElement"
@@ -207,7 +213,7 @@ function exibirCaixaMensagem() {
       if (resposta) {
         while(myList.firstChild){
           myList.removeChild(myList.firstChild)
-          localStorage.clear();
+          localStorage.removeItem('minhaLista');
           }
       } else {
       }

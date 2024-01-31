@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +7,23 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet">
     <link rel="icon" href="https://github.com/gabrielribbz/turnOrder/blob/main/assets/pageicon.png?raw=true" sizes="400x400" type="image/x-icon">
 </head>
 <body>
-    <div id="addElement">
-        <input type="text" class="input" id="textBox" placeholder="Insert a name">
-        <input type="number" class="input" id="initiativeBox" placeholder="INI">
-        <button id="button"></button>
-    </div>
+    <header>
+        <div id="addElement">
+            <input type="text"  class="input " id="textBox" placeholder="Insert a name" list="sugestoes-container"> 
+            <input type="number" class="input" id="initiativeBox" placeholder="INI" >
+            <button id="button"></button>
+            <i class=''></i>
+        </div>
+    </header>
+    <datalist id="sugestoes-container">
+    </datalist>
+    
     <div>
         <ul id="orderList">
         </ul>
@@ -46,5 +54,6 @@
     </div>
     <script src="script.js"></script>
     <script src="localstorage.js"></script>
+    <script src="suggest.js"></script>
 </body>
 </html>
